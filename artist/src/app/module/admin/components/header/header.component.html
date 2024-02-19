@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+    <button mat-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-drawer-container>
+    <mat-drawer #drawer opened="true" mode="side" position="start">
+        <mat-nav-list>
+            <mat-list-item>
+                <button mat-button><mat-icon>dashboard</mat-icon> Dashboard</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button routerLink="banner"><mat-icon>add_a_photo</mat-icon> Banner</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button routerLink="about-us"><mat-icon>explore</mat-icon> About us</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button><mat-icon>local_laundry_service</mat-icon> Services</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button><mat-icon>pause_presentation</mat-icon> Courses</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button><mat-icon>add_to_photos</mat-icon> Gallery </button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button><mat-icon>speaker_group</mat-icon> Testimonial </button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button><mat-icon>contact_support</mat-icon>Contact us</button>
+            </mat-list-item>
+
+            <mat-list-item>
+                <button mat-button routerLink="testing"><mat-icon>table_chart</mat-icon>Table</button>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div style="text-align: center; min-height: 700px;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
