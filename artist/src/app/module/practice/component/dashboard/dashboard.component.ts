@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { menu } from '../../practice-menu';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-
+  sideMenu:any = menu;
+  
+  ngOnInit(){
+  }
 }

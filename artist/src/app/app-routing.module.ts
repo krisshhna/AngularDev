@@ -11,8 +11,8 @@ const routes: Routes = [
     loadChildren:()=>import('./module/admin/admin.module').then((x)=>x.AdminModule)
   },
   {
-    path:'practice',
-    loadChildren:()=>import('./module/practice/practice.module').then((x)=>x.PracticeModule)
+    path:'self',
+    loadChildren:()=>import('./module/practice/practice.module').then((u)=>u.PracticeModule)
   }
 ];
 

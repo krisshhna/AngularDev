@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PracticeRoutingModule } from './practice-routing.module';
-import { DashboardComponent } from './component/dashboard/dashboard.component';
-import { PracticeFooterComponent } from './component/practice-footer/practice-footer.component';
+import { PracticeRoutingModule, practComponent } from './practice-routing.module';
+import { matAdmin } from '../../mat-admin';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    DashboardComponent,
-    PracticeFooterComponent
+    practComponent
   ],
   imports: [
     CommonModule,
-    PracticeRoutingModule
+    PracticeRoutingModule,
+    matAdmin,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PracticeModule { }
