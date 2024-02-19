@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path:'admin',
     loadChildren:()=>import('./module/admin/admin.module').then((x)=>x.AdminModule)
+  },
+  {
+    path:'practice',
+    loadChildren:()=>import('./module/practice/practice.module').then((x)=>x.PracticeModule)
   }
 ];
 
