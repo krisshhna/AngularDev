@@ -7,6 +7,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
+
 // import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 // import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 
@@ -19,7 +21,8 @@ export const matAdmin = [
     MatListModule,
     MatToolbarModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
     // MatPaginator,
     // MatPaginatorModule,
     // MatTableDataSource,
