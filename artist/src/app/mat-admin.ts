@@ -8,7 +8,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
+import { MatRadioModule } from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule}    from    '@angular/material/select';
 // import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
 // import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 
@@ -22,7 +26,12 @@ export const matAdmin = [
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatSelectModule
     // MatPaginator,
     // MatPaginatorModule,
     // MatTableDataSource,
