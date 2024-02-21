@@ -6,6 +6,9 @@ import { HomeComponent } from './component/home/home.component';
 import { ImgFormComponent } from './component/img-form/img-form.component';
 import { MultiFormComponent } from './component/multi-form/multi-form.component';
 import { NormFormComponent } from './component/norm-form/norm-form.component';
+import { NormDiComponent } from './component/Dialogbox/norm-di/norm-di.component';
+import { ImgDiComponent } from './component/Dialogbox/img-di/img-di.component';
+import { MultiDiComponent } from './component/Dialogbox/multi-di/multi-di.component';
 
 
 const routes: Routes = [
@@ -28,6 +31,7 @@ const routes: Routes = [
 export class PracticeRoutingModule { }
 
 export const practComponent = [
-  DashboardComponent,PracticeFooterComponent,
-  HomeComponent
+  DashboardComponent, PracticeFooterComponent, HomeComponent,
+  NormFormComponent, ImgFormComponent, MultiFormComponent,
+  NormDiComponent, ImgDiComponent, MultiDiComponent
 ]
