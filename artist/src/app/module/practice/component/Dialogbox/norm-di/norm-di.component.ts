@@ -20,7 +20,6 @@ export class NormDiComponent {
     dofBirth:       ['',[Validators.required]],
     phone:          ['',[Validators.required,Validators.pattern(/^\+?\d{10,15}$/), Validators.maxLength(10)]],
     gender:         ['',[Validators.required]],
-    // hobbies:        ['',[Validators.required]],
     education:      ['',[Validators.required]],
     company:        ['',[Validators.required]],
     experience:     ['',[Validators.required]],
