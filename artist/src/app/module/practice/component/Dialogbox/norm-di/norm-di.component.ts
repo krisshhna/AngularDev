@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit} from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
@@ -24,9 +24,26 @@ export class NormDiComponent {
     company:        ['',[Validators.required]],
     experience:     ['',[Validators.required]],
     package:        ['',[Validators.required]],
+    degrees:         this._fb.array([])
   });
 
   ngOnInit(){
+  }
+
+  addDegree(){
+    const degree = this.normForm.get('degrees') as FormArray;
+    degree.push(this.createDegree());
+  }
+
+  createDegree(){
+    return this._fb.group({
+      type:   ['',[Validators.required]],
+      file:   ['',[Validators.required]]
+    })
+  }
+
+  get getDegree(){
+    return this.normForm.get('degrees') as FormArray;
   }
 
   onFormSubmit(){

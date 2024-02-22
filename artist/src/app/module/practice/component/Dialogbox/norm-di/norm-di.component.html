@@ -72,6 +72,25 @@
             </mat-form-field>
         </div>
 
+        <div class="row" class="mat-elevation-z8">
+            <div formArrayName="degrees">
+                <mat-card *ngFor="let item of getDegree.controls; let i= index" [formGroupName]="i" >
+                    <!-- <mat-card-content> -->
+                        <mat-form-field class="mat-50">
+                            <mat-label>Type</mat-label>
+                            <input type="text" matInput formControlName="type">
+                        </mat-form-field>
+
+                        <mat-form-field class="mat-50">
+                            <mat-label>File</mat-label>
+                            <input type="text" matInput formControlName="file">
+                        </mat-form-field>
+                    <!-- </mat-card-content> -->
+                </mat-card>
+            </div>
+        </div>
+        <button mat-button (click)="addDegree()" type="button">Add</button>
+
         <mat-dialog-actions align="start">
             <button mat-button mat-dialog-close>Cancel</button>
             <button mat-raised-button color="warn" type="submit" [disabled]="!normForm.valid">Save</button>

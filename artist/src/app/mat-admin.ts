@@ -13,8 +13,7 @@ import {MatNativeDateModule} from '@angular/material/core';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule}    from    '@angular/material/select';
-// import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-// import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import {MatCardModule}      from    '@angular/material/card';
 
 export const matAdmin = [
     MatButtonModule,
@@ -31,7 +30,8 @@ export const matAdmin = [
     MatNativeDateModule,
     MatRadioModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule
     // MatPaginator,
     // MatPaginatorModule,
     // MatTableDataSource,
