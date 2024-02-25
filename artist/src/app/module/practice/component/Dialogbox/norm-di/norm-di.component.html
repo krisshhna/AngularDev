@@ -1,30 +1,30 @@
-<h2 mat-dialog-title>Normal Angular Form</h2>
-
+<h2>Normal Angular Forms</h2>
 <mat-dialog-content class="mat-typography">
 
-    <form [formGroup]="normForm" (ngSubmit)="onFormSubmit()">
+    <form [formGroup]="normForm" (ngSubmit)="ngSubmitRecord()">
+
         <div class="row">
             <mat-form-field>
-                <mat-label>First Name</mat-label>
-                <input matInput type="text" formControlName="firstName">
+                <mat-label>First name</mat-label>
+                <input type="text" matInput formControlName="firstName">
             </mat-form-field>
-
+    
             <mat-form-field>
-                <mat-label>Last Name</mat-label>
-                <input matInput type="text" formControlName="lastName">
+                <mat-label>Last name</mat-label>
+                <input type="text" matInput formControlName="lastName">
             </mat-form-field>
         </div>
 
         <div class="row">
             <mat-form-field>
-                <mat-label>Email</mat-label>
-                <input matInput type="text" formControlName="emailId">
+                <mat-label>Email Id</mat-label>
+                <input type="text" matInput formControlName="emailId">
             </mat-form-field>
-
+    
             <mat-form-field>
                 <mat-label>DOB</mat-label>
                 <input matInput [matDatepicker]="picker" formControlName="dofBirth">
-                <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+                  <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -32,68 +32,68 @@
 
         <div class="row">
             <mat-form-field>
-                <mat-label>Phone No</mat-label>
-                <input type="number" matInput formControlName="phone">
+                <mat-label>Phone Number</mat-label>
+                <input type="text" matInput formControlName="phone">
             </mat-form-field>
         </div>
 
         <div class="row">
-            <mat-radio-group aria-label="Select an option" formControlName="gender">   
+            <mat-radio-group formControlName="gender">
                 <mat-label>Gender</mat-label>
-                <mat-radio-button value="male">Male</mat-radio-button>
+                <mat-radio-button value="male"> Male</mat-radio-button>
                 <mat-radio-button value="female">Female</mat-radio-button>
-                <mat-radio-button value="others">Others</mat-radio-button>
+                <mat-radio-button value="Other">Other</mat-radio-button>
             </mat-radio-group>
         </div>
 
         <div class="row">
             <mat-form-field>
-                <mat-label>Eduction</mat-label>
-                <mat-select formControlName="education">
-                    <mat-option *ngFor="let ad of allDegrees" value="ad.id">{{ad.name}}</mat-option>
-                </mat-select>
+                <mat-label>Education</mat-label>
+                <input type="text" matInput formControlName="education">
             </mat-form-field>
-
+    
             <mat-form-field>
                 <mat-label>Company</mat-label>
-                <input matInput type="text" formControlName="company">
+                <input type="text" matInput formControlName="company">
             </mat-form-field>
         </div>
 
         <div class="row">
             <mat-form-field>
                 <mat-label>Experience</mat-label>
-                <input matInput type="text" formControlName="experience">
+                <input type="text" matInput formControlName="experience">
             </mat-form-field>
-
+    
             <mat-form-field>
                 <mat-label>Package</mat-label>
-                <input matInput type="text" formControlName="package">
+                <input type="text" matInput formControlName="package">
             </mat-form-field>
         </div>
 
-        <div class="row" class="mat-elevation-z8">
-            <div formArrayName="degrees">
-                <mat-card *ngFor="let item of getDegree.controls; let i= index" [formGroupName]="i" >
-                    <!-- <mat-card-content> -->
-                        <mat-form-field class="mat-50">
-                            <mat-label>Type</mat-label>
-                            <input type="text" matInput formControlName="type">
-                        </mat-form-field>
-
-                        <mat-form-field class="mat-50">
-                            <mat-label>File</mat-label>
-                            <input type="text" matInput formControlName="file">
-                        </mat-form-field>
-                    <!-- </mat-card-content> -->
-                </mat-card>
+        <div formArrayName="degrees">
+            <div class="row" *ngFor="let de of getAllItems.controls; let i = index" [formGroupName]="i">
+                <!-- <mat-card > -->
+                    <mat-form-field>
+                        <mat-label>Type</mat-label>
+                        <input type="text" matInput formControlName="type">
+                    </mat-form-field>
+    
+                    <mat-form-field>
+                        <mat-label>File</mat-label>
+                        <input type="text" matInput formControlName="file">
+                    </mat-form-field>
+                <!-- </mat-card> -->
             </div>
         </div>
-        <button mat-button (click)="addDegree()" type="button">Add</button>
 
-        <mat-dialog-actions align="start">
+        <div class="row">
+            <button mat-raised-button color="primary" type="button" (click)="addItems()"> Add </button>
+        </div>
+        <div>
             <button mat-button mat-dialog-close>Cancel</button>
-            <button mat-raised-button color="warn" type="submit" [disabled]="!normForm.valid">Save</button>
-        </mat-dialog-actions>
+            <button mat-raised-button color="warn" type="submit">Submit</button>
+        </div>
+
     </form>
+
 </mat-dialog-content>
