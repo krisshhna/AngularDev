@@ -72,17 +72,17 @@
 
         <div formArrayName="degrees">
             <div class="row" *ngFor="let de of getAllItems.controls; let i = index" [formGroupName]="i">
-                <!-- <mat-card > -->
                     <mat-form-field>
-                        <mat-label>Type</mat-label>
-                        <input type="text" matInput formControlName="type">
+                        <mat-label>Degree Type</mat-label>
+                        <input type="text" matInput formControlName="degreeType">
                     </mat-form-field>
     
                     <mat-form-field>
-                        <mat-label>File</mat-label>
-                        <input type="text" matInput formControlName="file">
+                        <mat-label>Percentage</mat-label>
+                        <input type="text" matInput formControlName="percent">
+                        <!-- <input hidden id="input-file-id" formControlName="file" />
+                        <label for="input-file-id" class="md-button md-raised md-primary">Choose Files</label> -->
                     </mat-form-field>
-                <!-- </mat-card> -->
             </div>
         </div>
 
@@ -91,7 +91,7 @@
         </div>
         <div>
             <button mat-button mat-dialog-close>Cancel</button>
-            <button mat-raised-button color="warn" type="submit">Submit</button>
+            <button mat-raised-button color="warn" [disabled]="!normForm.valid" type="submit">Submit</button>
         </div>
 
     </form>

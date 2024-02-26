@@ -35,8 +35,8 @@ export class NormDiComponent {
 
   createItems(){
    return this._fb.group({
-      type:   ['',[Validators.required]],
-      file:   ['',[Validators.required]]
+      degreeType:   ['',[Validators.required]],
+      percent:   ['',[Validators.required]]
    })
   }
 

@@ -1,1 +1,26 @@
-<p>img-di works!</p>
+<h2>Image Upload Form</h2>
+
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="imgForm" (ngSubmit)="submitRecord()">
+            <div class="row">
+                <mat-form-field>
+                    <mat-label>Name</mat-label>
+                    <input type="text" matInput formControlName="name">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Type</mat-label>
+                    <mat-select formControlName="fileType">
+                        <mat-option value="1">Option 1</mat-option>
+                        <mat-option value="2">Option 2</mat-option>
+                        <mat-option value="3">Option 3</mat-option>
+                      </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <button mat-button mat-dialog-close>Cancel</button>
+                <button mat-raised-button color="warn"  type="submit">Submit {{imgForm.status}}</button>
+            </div>
+    </form>
+</mat-dialog-content>
