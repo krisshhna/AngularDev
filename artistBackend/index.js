@@ -1,13 +1,14 @@
-const express   =   require('express');
-const app       =   express();
+require('dotenv').config();
+const express       =   require('express');
+const app           =   express();
 
 app.get('/api',(req, res)=>{
-    app.json({
-        success:    1,
-        message:    'The rest api is working fine',
+    res.json({
+        success:        1,
+        message:        'This is rest api working',
     })
-})
+});
 
-app.listen(3000,()=>{
-    console.log('The server is working fine');
+app.listen(process.env.APP_PORT,()=>{
+    console.log('Server is up and running on ',process.env.APP_PORT);
 })
