@@ -1,0 +1,19 @@
+<div class="content-container">
+    <h3>Hello world</h3>
+</div>
+
+<div class="content-container">
+    <section class="example-sectionn">
+        <mat-checkbox class="example-margin" *ngFor="let al of allList" (change)="onSelection($event, al.id, al)">
+            {{al.name}}
+        </mat-checkbox>
+
+        <ng-container *ngIf="details">
+            <p class="example-margin" *ngFor="let af of formList">
+                <span *ngIf="af.checked">
+                    {{af.name}}
+                </span>
+            </p>
+        </ng-container>
+    </section>
+</div>

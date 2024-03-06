@@ -9,6 +9,7 @@ import { NormFormComponent } from './component/norm-form/norm-form.component';
 import { NormDiComponent } from './component/Dialogbox/norm-di/norm-di.component';
 import { ImgDiComponent } from './component/Dialogbox/img-di/img-di.component';
 import { MultiDiComponent } from './component/Dialogbox/multi-di/multi-di.component';
+import { DetailFormComponent } from './component/detail-form/detail-form.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
       {path:'home',         component:HomeComponent},
       {path:'normForm',     component:NormFormComponent},
       {path:'imgForm',      component:ImgFormComponent},
-      {path:'multiForm',    component:MultiFormComponent}
+      {path:'multiForm',    component:MultiFormComponent},
+      {path:'detail',       component:DetailFormComponent}
     ]
   }
 ];
@@ -33,5 +35,5 @@ export class PracticeRoutingModule { }
 export const practComponent = [
   DashboardComponent, PracticeFooterComponent, HomeComponent,
   NormFormComponent, ImgFormComponent, MultiFormComponent,
-  NormDiComponent, ImgDiComponent, MultiDiComponent
+  NormDiComponent, ImgDiComponent, MultiDiComponent, DetailFormComponent
 ]
