@@ -10,6 +10,10 @@ import { NormDiComponent } from './component/Dialogbox/norm-di/norm-di.component
 import { ImgDiComponent } from './component/Dialogbox/img-di/img-di.component';
 import { MultiDiComponent } from './component/Dialogbox/multi-di/multi-di.component';
 import { DetailFormComponent } from './component/detail-form/detail-form.component';
+import { DeclarationComponent } from './component/DetailForm/declaration/declaration.component';
+import { MemberDetailComponent } from './component/DetailForm/member-detail/member-detail.component';
+import { UpdateBankingComponent } from './component/DetailForm/update-banking/update-banking.component';
+import { UpdateFormComponent } from './component/DetailForm/update-form/update-form.component';
 
 
 const routes: Routes = [
@@ -35,5 +39,6 @@ export class PracticeRoutingModule { }
 export const practComponent = [
   DashboardComponent, PracticeFooterComponent, HomeComponent,
   NormFormComponent, ImgFormComponent, MultiFormComponent,
-  NormDiComponent, ImgDiComponent, MultiDiComponent, DetailFormComponent
+  NormDiComponent, ImgDiComponent, MultiDiComponent, DetailFormComponent,
+  DeclarationComponent, MemberDetailComponent, UpdateBankingComponent, UpdateFormComponent
 ]

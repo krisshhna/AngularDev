@@ -1,0 +1,50 @@
+<div class="content-container" [formGroup]="form">
+    <div class="row">
+        <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input type="text" matInput formControlName="firstName">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input type="text" matInput formControlName="lastName">
+        </mat-form-field>
+
+        <mat-radio-group aria-label="Select an option" formControlName="gender">
+            <mat-radio-button value="1">Male</mat-radio-button>
+            <mat-radio-button value="2">Female</mat-radio-button>
+        </mat-radio-group>              
+    </div>
+
+    <div class="row">
+        <mat-form-field>
+            <mat-label>DOB</mat-label>
+            <input type="text" matInput formControlName="dob">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Number</mat-label>
+            <input type="text" matInput formControlName="mobnumb">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input type="text" matInput formControlName="email">
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <mat-form-field>
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="selectType">
+                <mat-option value="1">Identity number</mat-option>
+                <mat-option value="2">Passport</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label></mat-label>
+            <input type="text" matInput formControlName="typeValue">
+        </mat-form-field>
+    </div>
+</div>

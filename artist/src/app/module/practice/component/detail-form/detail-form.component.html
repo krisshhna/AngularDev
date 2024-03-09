@@ -1,19 +1,52 @@
 <div class="content-container">
-    <h3>Hello world</h3>
-</div>
-
-<div class="content-container">
     <section class="example-sectionn">
         <mat-checkbox class="example-margin" *ngFor="let al of allList" (change)="onSelection($event, al.id, al)">
             {{al.name}}
         </mat-checkbox>
 
-        <ng-container *ngIf="details">
-            <p class="example-margin" *ngFor="let af of formList">
+
+        <ng-container class="content-container" *ngIf="details">
+            <!-- <p class="example-margin">
                 <span *ngIf="af.checked">
                     {{af.name}}
                 </span>
-            </p>
+            </p> -->
+
+            <mat-accordion>
+                <div *ngFor="let af of formList">
+                    <mat-expansion-panel *ngIf="af.checked" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                        <mat-expansion-panel-header>
+                          <mat-panel-title>{{af.name}}</mat-panel-title>
+                          <mat-panel-description></mat-panel-description>
+                        </mat-expansion-panel-header>
+                        <ng-container [ngSwitch]="af.id">
+                            <form [formGroup]="detailForm" (ngSubmit)="ngSubmitDetails()">
+                                <ng-container *ngSwitchCase="1">
+                                    <app-member-detail formGroupName="member"></app-member-detail>
+                                </ng-container>
+                                
+                                <ng-container *ngSwitchCase="2">
+                                    <app-update-banking></app-update-banking>
+                                </ng-container>
+                                
+                                <ng-container *ngSwitchCase="3">
+                                </ng-container>
+                                
+                                <ng-container *ngSwitchCase="4"></ng-container>
+                                <ng-container *ngSwitchCase="5"></ng-container>
+                                <ng-container *ngSwitchCase="6"></ng-container>
+                                <ng-container *ngSwitchCase="7"></ng-container>
+    
+                                <ng-container *ngSwitchCase="8">
+                                    <app-declaration formGroupName="declaration"></app-declaration>
+
+                                    <button type="submit" mat-raised-button color="warn">Submit {{detailForm.status}}</button>
+                                </ng-container>
+                            </form>
+                        </ng-container>
+                    </mat-expansion-panel>
+                </div>
+            </mat-accordion>
         </ng-container>
     </section>
 </div>

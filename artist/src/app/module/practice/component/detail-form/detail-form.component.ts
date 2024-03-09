@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-detail-form',
@@ -27,12 +28,78 @@ export class DetailFormComponent {
   ];
 
   details:any = 0;
+  detailForm!:FormGroup;
+  panelOpenState = false;
+  isDisabled:boolean = true;
+
+  constructor(public fb:FormBuilder){}
+
+  ngOnInit(){
+    this.registrationForm();
+  }
+
+  registrationForm(){
+    this.detailForm = this.fb.group({
+      'member':this.fb.group({
+        'firstName':  ['',[Validators.required]],
+        'lastName':   ['',[Validators.required]],
+        'gender':     ['',[Validators.required]],
+        'dob':        ['',[Validators.required]],
+        'mobnumb':    ['',[Validators.required, Validators.minLength(10), Validators.maxLength(10)]],
+        'email':      ['',[Validators.required, Validators.email]],
+        'selectType': ['',[Validators.required]],
+        'typeValue':  ['',[Validators.required]]
+      }),
+      'updateDetail':this.fb.group({
+        'lastName':   ['',[Validators.required]],
+        'address':    ['',[Validators.required]],
+        'postCode':   ['',[Validators.required, Validators.minLength(6),  Validators.maxLength(6)]],
+        'phoneNumb':  ['',[Validators.required]]
+      }),
+      // 'updateBanking':this.fb.group({
+      //   'bankName':   ['',[Validators.required]],
+      //   'account':    ['',[Validators.required]],
+      //   'typer':      ['',[Validators.required]],
+      //   'ifsc':       ['',[Validators.required]] 
+      // }),
+      'declaration':this.fb.group({
+        'declare1':   ['',[Validators.required]],
+        'declare2':   ['',[Validators.required]],
+        'declare3':   ['',[Validators.required]],
+        'declare4':   ['',[Validators.required]],
+        'declare5':   ['',[Validators.required]],
+      })
+    })
+  }
 
   onSelection(event:any, id:number, item:any){
     item.checked = !item.checked;
     let count = this.allList.filter((x:any)=>x.checked == true).length;
     let form = this.formList.filter((x:any)=>x.alId == id);
     form[0].checked = item.checked;
+
     this.details = count >0?true:false;
+
+    // let updateDetail = this.formList[1].checked;
+    // if(updateDetail){
+    //   this.detailForm.controls['updateDetail'].enable();
+    // }else{
+      this.detailForm.controls['updateDetail'].disable();
+    // }
+
+    // let bankDetail  = this.formList[2].checked;
+    // if(bankDetail){
+    //   this.detailForm.controls['updateBanking'].enable();
+    // }else{
+    //   this.detailForm.controls['updateBanking'].disable();
+    // }
+
+    console.log(this.detailForm.controls);
   }
+
+  ngSubmitDetails(){
+    console.log(this.detailForm);
+  }
+
+
 }
