@@ -26,10 +26,11 @@
                                 </ng-container>
                                 
                                 <ng-container *ngSwitchCase="2">
-                                    <app-update-banking></app-update-banking>
+                                    <app-update-form formGroupName="updateDetail"></app-update-form>
                                 </ng-container>
                                 
                                 <ng-container *ngSwitchCase="3">
+                                    <app-update-banking formGroupName="updateBanking"></app-update-banking>
                                 </ng-container>
                                 
                                 <ng-container *ngSwitchCase="4"></ng-container>

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, EventEmitter } from '@angular/core';
+import { FormGroup, FormGroupDirective } from '@angular/forms';
 
 @Component({
   selector: 'app-update-form',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrl: './update-form.component.css'
 })
 export class UpdateFormComponent {
+  formUpdate!:FormGroup;
+  @Input() formGroupName!:string;
 
+  constructor(public rootForm:FormGroupDirective){}
+  
+  ngOnInit(){
+    this.formUpdate    =  this.rootForm.control.get(this.formGroupName) as FormGroup;
+  }
 }

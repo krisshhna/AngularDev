@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-detail-form',
@@ -51,17 +51,15 @@ export class DetailFormComponent {
         'typeValue':  ['',[Validators.required]]
       }),
       'updateDetail':this.fb.group({
+        'firstName':  ['',[Validators.required]],
         'lastName':   ['',[Validators.required]],
-        'address':    ['',[Validators.required]],
-        'postCode':   ['',[Validators.required, Validators.minLength(6),  Validators.maxLength(6)]],
-        'phoneNumb':  ['',[Validators.required]]
+        'dob':        ['',[Validators.required]],
+        'email':      ['',[Validators.required]],
       }),
-      // 'updateBanking':this.fb.group({
-      //   'bankName':   ['',[Validators.required]],
-      //   'account':    ['',[Validators.required]],
-      //   'typer':      ['',[Validators.required]],
-      //   'ifsc':       ['',[Validators.required]] 
-      // }),
+      'updateBanking':this.fb.group({
+        'name':       ['',[Validators.required]],
+        'newBank':    this.fb.array([])        
+      }),
       'declaration':this.fb.group({
         'declare1':   ['',[Validators.required]],
         'declare2':   ['',[Validators.required]],
@@ -80,12 +78,12 @@ export class DetailFormComponent {
 
     this.details = count >0?true:false;
 
-    // let updateDetail = this.formList[1].checked;
-    // if(updateDetail){
-    //   this.detailForm.controls['updateDetail'].enable();
-    // }else{
+    let updateDetail = this.formList[1].checked;
+    if(updateDetail){
+      this.detailForm.controls['updateDetail'].enable();
+    }else{
       this.detailForm.controls['updateDetail'].disable();
-    // }
+    }
 
     // let bankDetail  = this.formList[2].checked;
     // if(bankDetail){
@@ -93,8 +91,25 @@ export class DetailFormComponent {
     // }else{
     //   this.detailForm.controls['updateBanking'].disable();
     // }
+  }
 
-    console.log(this.detailForm.controls);
+  updateDetail():FormArray{
+    return this.detailForm.get('updateDetail') as FormArray;
+  }
+  
+  newupdateDetail():FormGroup{
+    return this.fb.group({
+      categoryId:['',[Validators.required]],
+      categoryName:['',[Validators.required]]
+    })
+  }
+
+  addupdateDetail(){
+    this.updateDetail().push(this.newupdateDetail());
+  }
+
+  removeupdateDetail(catId:number){
+    // this.updateDetail().removeA
   }
 
   ngSubmitDetails(){

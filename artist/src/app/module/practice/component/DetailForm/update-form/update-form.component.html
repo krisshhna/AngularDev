@@ -1,1 +1,27 @@
-<p>update-form works!</p>
+<ng-container >
+    <div [formGroup]="formUpdate">
+        <div class="row">
+            <mat-form-field>
+                <mat-label>First Name</mat-label>
+                <input type="text" matInput formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Last Name</mat-label>
+                <input type="text" matInput formControlName="lastName">
+            </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field>
+                <mat-label>DOB</mat-label>
+                <input type="text" matInput formControlName="dob">
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input type="text" matInput formControlName="email">
+            </mat-form-field>
+        </div>
+    </div>
+</ng-container>
